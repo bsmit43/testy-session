@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildRight Construction | Expert Construction Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #f7a800;
+            --secondary: #2d3e50;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --gray: #6c757d;
+            --success: #28a745;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --border-radius: 4px;
+            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #444;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 12px 25px;
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            border-color: var(--primary);
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .section-title.text-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        /* Header */
+        .navbar {
+            background-color: #ffffff;
+            padding: 20px 0;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--secondary);
+        }
+
+        .navbar-brand span {
+            color: var(--primary);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            width: 24px;
+            height: 17px;
+            background-image: none;
+            position: relative;
+            border-bottom: 2px solid var(--secondary);
+            transition: all 300ms linear;
+        }
+        
+        .navbar-toggler-icon:after, 
+        .navbar-toggler-icon:before {
+            width: 24px;
+            position: absolute;
+            height: 2px;
+            background-color: var(--secondary);
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
+        }
+        
+        .navbar-toggler-icon:after {
+            top: 8px;
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            color: var(--secondary);
+            position: relative;
+            padding: 8px 20px !important;
+            margin: 0 5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 70%;
+        }
+
+        .navbar-collapse {
+            background-color: #ffffff;
+        }
+
+        .nav-button {
+            padding: 8px 20px;
+            margin-left: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-color: var(--dark);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* About Section */
+        .about-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-img .about-experience {
+            position: absolute;
+            bottom: 30px;
+            left: -30px;
+            background-color: var(--primary);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-img .about-experience span {
+            font-size: 36px;
+            display: block;
+            line-height: 1;
+        }
+
+        .about-feature {
+            margin-bottom: 30px;
+        }
+
+        .about-feature i {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 24px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .about-feature:hover i {
+            transform: translateY(-10px);
+        }
+
+        .about-feature h4 {
+            margin-bottom: 15px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 30px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            margin-bottom: 25px;
+        }
+
+        /* Projects Section */
+        .project-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .project-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-item:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            transition: var(--transition);
+        }
+
+        .project-info h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--primary);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .project-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-item:hover .project-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-link:hover {
+            background-color: #fff;
+            color: var(--primary);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--secondary);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stat-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .stat-text {
+            text-transform: uppercase;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-choose-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .why-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .why-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-item-icon {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 24px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .why-item h4 {
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-item:before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .testimonial-author-info h5 {
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author-info span {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Team Section */
+        .team-member {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .team-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 25px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .team-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .team-info span {
+            color: var(--gray);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: var(--secondary);
+            color: #fff;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background-color: var(--primary);
+            padding: 80px 0;
+            color: var(--dark);
+        }
+
+        .contact-cta h2 {
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .contact-cta p {
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding-top: 80px;
+        }
+
+        .footer-about img {
+            margin-bottom: 25px;
+            height: 50px;
+        }
+
+        .footer h4 {
+            color: #fff;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-contact {
+            margin-bottom: 30px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-icon {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-text h5 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-links li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-links li a i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .footer-social {
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            position: relative;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+        }
+
+        .newsletter-form button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 0 20px;
+            background-color: var(--primary);
+            border: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
+            }
+            .hero-content h1 {
+                font-size: 42px;
+            }
+            .navbar-collapse {
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 999;
+            }
+            .navbar-nav {
+                padding: 10px 0;
+            }
+            .nav-button {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            .about-img .about-experience {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 32px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .about-img {
+                margin-bottom: 30px;
+            }
+            .stat-item {
+                margin-bottom: 40px;
+            }
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Build<span>Right</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-button">Get a Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('images/hero-bg.jpg');"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Unleash Your <span>Radiance</span> with Our Beauty Collection</h1>
+                <p>At testy, we curate the finest beauty and cosmetic products to enhance your natural glow. Discover a world of skincare, makeup, and fragrances designed to empower your beauty journey.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Explore Our Products</a>
+                    <a href="projects.html" class="btn btn-outline-light">View Our Collections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="about-img">
+                    <img src="images/about.jpg" alt="About testy Beauty and Cosmetics" class="img-fluid">
+                    <div class="about-experience">
+                        <span>5+</span> Years of Enhancing Beauty
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-title">
+                        <h2>Enhancing Beauty with Quality and Care</h2>
+                        <p>Your trusted destination for premium beauty and cosmetic products.</p>
+                    </div>
+                    <p>Founded in 2018, testy has quickly become a preferred retailer in the beauty and cosmetics industry. We specialize in offering a curated selection of high-quality products for all your beauty needs.</p>
+                    <p>Our dedicated team combines beauty expertise with a passion for customer satisfaction. We prioritize providing safe, effective, and delightful beauty solutions to enhance your natural radiance.</p>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="about-feature">
+                                <i class="bi bi-check-circle"></i>
+                                <h4>Quality Assurance</h4>
+                                <p>We ensure all products meet the highest standards of quality and safety.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-feature">
+                                <i class="bi bi-people"></i>
+                                <h4>Expert Advice</h4>
+                                <p>Our beauty experts provide personalized advice to help you find the perfect products.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary mt-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section class="services section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Beauty & Cosmetics Services</h2>
+                <p>Expert beauty solutions tailored for you</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>Skincare Consultations</h3>
+                        <p>Personalized skincare consultations to help you achieve healthy, radiant skin. We analyze your skin type and recommend the best products for your needs.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h3>Makeup Application</h3>
+                        <p>Professional makeup application for any occasion. From natural everyday looks to glamorous evening styles, our artists will enhance your natural beauty.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-scissors"></i>
+                        </div>
+                        <h3>Hair Styling & Treatments</h3>
+                        <p>Expert hair styling and treatments to keep your hair looking its best. We offer haircuts, coloring, styling, and deep conditioning treatments.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <h3>Facial Treatments</h3>
+                        <p>Relaxing and rejuvenating facial treatments to improve your skin's texture and tone. We offer a variety of facials to address different skin concerns.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-hand-index-thumb"></i>
+                        </div>
+                        <h3>Manicures & Pedicures</h3>
+                        <p>Pampering manicures and pedicures to keep your hands and feet looking their best. Choose from a variety of colors and styles.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-gift"></i>
+                        </div>
+                        <h3>Personalized Beauty Boxes</h3>
+                        <p>Curated beauty boxes tailored to your individual preferences. Discover new products and brands with our personalized subscription service.</p>
+                        <a href="services.html" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Recent Projects</h2>
+                <p>Showcasing our expertise and commitment to excellence</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-1.jpg" alt="Luxury Residential Complex">
+                        </div>
+                        <div class="project-info">
+                            <h4>Luxury Residential Complex</h4>
+                            <p>Residential Construction</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-2.jpg" alt="Modern Office Building">
+                        </div>
+                        <div class="project-info">
+                            <h4>Modern Office Building</h4>
+                            <p>Commercial Construction</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-3.jpg" alt="Manufacturing Facility">
+                        </div>
+                        <div class="project-info">
+                            <h4>Manufacturing Facility</h4>
+                            <p>Industrial Construction</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-4.jpg" alt="Historic Building Renovation">
+                        </div>
+                        <div class="project-info">
+                            <h4>Historic Building Renovation</h4>
+                            <p>Renovation & Remodeling</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-5.jpg" alt="Shopping Mall Complex">
+                        </div>
+                        <div class="project-info">
+                            <h4>Shopping Mall Complex</h4>
+                            <p>Commercial Construction</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-item">
+                        <div class="project-img">
+                            <img src="images/project-6.jpg" alt="Luxury Custom Home">
+                        </div>
+                        <div class="project-info">
+                            <h4>Luxury Custom Home</h4>
+                            <p>Residential Construction</p>
+                        </div>
+                        <a href="projects.html" class="project-link">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="stat-number">120+</div>
+                        <div class="stat-text">Skilled Professionals</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="stat-number">25+</div>
+                        <div class="stat-text">Years of Experience</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+                        <div class="stat-number">450+</div>
+                        <div class="stat-text">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us section-padding">
+        <div class="why-choose-bg" style="background-image: url('images/why-choose-bg.jpg');"></div>
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Why Choose BuildRight</h2>
+                <p>The qualities that set us apart</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4>Quality Assurance</h4>
+                        <p>We're committed to delivering the highest quality construction that stands the test of time. Our strict quality control processes ensure excellence at every stage.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h4>On-Time Delivery</h4>
+                        <p>We understand the importance of timelines in construction projects. Our efficient project management ensures we deliver on schedule without compromising quality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <h4>Cost-Effective Solutions</h4>
+                        <p>We offer competitive pricing and work diligently to stay within budget constraints while maintaining high standards of craftsmanship and materials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <h4>Experienced Team</h4>
+                        <p>Our team of construction professionals brings decades of combined experience across all types of projects, ensuring expertise in every aspect of your build.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4>Innovative Approach</h4>
+                        <p>We stay at the forefront of construction technology and methodologies, implementing innovative solutions that improve efficiency and results.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-item">
+                        <div class="why-item-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4>Exceptional Service</h4>
+                        <p>Client satisfaction is our top priority. We maintain clear communication throughout your project and provide responsive, attentive service from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Client Testimonials</h2>
+            <p>What our clients say about their testy experience</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-item" data-animate="fadeInUp">
+                    <div class="testimonial-content">
+                        <p>"testy has completely transformed my skincare routine! The products are so gentle yet effective, and I've noticed a significant improvement in my skin's texture and clarity. I highly recommend testy to anyone looking for high-quality beauty products."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-1.jpg" alt="Testimonial">
+                        <div class="testimonial-author-info">
+                            <h5>Emily Carter</h5>
+                            <span>Skincare Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-item" data-animate="fadeInUp" data-delay="0.2s">
+                    <div class="testimonial-content">
+                        <p>"I absolutely love the makeup collection at testy! The colors are vibrant, the formulas are long-lasting, and the prices are unbeatable. I always get compliments when I wear testy makeup, and I can't wait to try more of their products."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-2.jpg" alt="Testimonial">
+                        <div class="testimonial-author-info">
+                            <h5>Jessica Miller</h5>
+                            <span>Makeup Artist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-item" data-animate="fadeInUp" data-delay="0.4s">
+                    <div class="testimonial-content">
+                        <p>"Finding the right beauty products for sensitive skin can be a challenge, but testy has made it so much easier. Their fragrance-free and hypoallergenic options have been a game-changer for me. I'm so grateful to have discovered testy!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-3.jpg" alt="Testimonial">
+                        <div class="testimonial-author-info">
+                            <h5>Amanda Davis</h5>
+                            <span>Sensitive Skin Advocate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Team Section -->
+    <section class="team section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Expert Beauty Team</h2>
+                <p>Meet the faces behind testy's flawless beauty solutions</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member" data-animate="slideInUp">
+                        <div class="team-img">
+                            <img src="images/team-1.jpg" alt="Team Member - Lead Makeup Artist">
+                        </div>
+                        <div class="team-info">
+                            <h4>Ava Martinez</h4>
+                            <span>Lead Makeup Artist</span>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member" data-animate="slideInUp">
+                        <div class="team-img">
+                            <img src="images/team-2.jpg" alt="Team Member - Skincare Specialist">
+                        </div>
+                        <div class="team-info">
+                            <h4>Chloe Davis</h4>
+                            <span>Skincare Specialist</span>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member" data-animate="slideInUp">
+                        <div class="team-img">
+                            <img src="images/team-3.jpg" alt="Team Member - Beauty Consultant">
+                        </div>
+                        <div class="team-info">
+                            <h4>Liam O'Connell</h4>
+                            <span>Beauty Consultant</span>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member" data-animate="slideInUp">
+                        <div class="team-img">
+                            <img src="images/team-4.jpg" alt="Team Member - Cosmetic Formulator">
+                        </div>
+                        <div class="team-info">
+                            <h4>Sofia Rossi</h4>
+                            <span>Cosmetic Formulator</span>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container text-center">
+            <h2>Ready to Enhance Your Beauty Routine?</h2>
+            <p>Contact us today for a personalized consultation and expert advice. Our team is ready to help you discover the perfect beauty and cosmetic products tailored to your unique needs.</p>
+            <a href="contact.html" class="btn btn-secondary">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="footer-about">
+                    <h4>About testy</h4>
+                    <p>testy is a premier Beauty and Cosmetics Retail business dedicated to providing high-quality beauty products and exceptional customer service. Located in test, we strive to enhance your natural beauty with our curated selection of cosmetics and skincare.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-5">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Products</a></li>
+                    <li><a href="lookbook.html"><i class="bi bi-chevron-right"></i> Lookbook</a></li>
+                    <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4>Product Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Makeup</a></li>
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Skincare</a></li>
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Haircare</a></li>
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Fragrances</a></li>
+                    <li><a href="products.html"><i class="bi bi-chevron-right"></i> Bath & Body</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4>Contact Information</h4>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        <h5>Address</h5>
+                        <p>test</p>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        <h5>Phone</h5>
+                        <p>(123) 456-7890</p>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        <h5>Email</h5>
+                        <p>info@testy.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 testy. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
